@@ -58,6 +58,12 @@
     a.target = "_blank"; a.rel = "noopener";
   });
 
+  // share this page with family on WhatsApp (hosts often need family approval)
+  $$("[data-share]").forEach(function (a) {
+    a.href = "https://wa.me/?text=" + encodeURIComponent("Please look at this venue for our event: " + location.href.split("#")[0]);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+
   // lightbox + gallery filter
   var lb = document.createElement("div");
   lb.className = "lightbox"; lb.innerHTML = '<button aria-label="Close">&times;</button><img alt=""><div class="cap2"></div>';

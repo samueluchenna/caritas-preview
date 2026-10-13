@@ -1,7 +1,7 @@
 /* Caritas Events Centre demo: shared styles. Brand: navy wordmark and coral mark, from the signboard. */
 :root{
-  --navy:#243a72; --navy-d:#16224a; --coral:#e0654a; --coral-d:#c4513a;
-  --ink:#16203a; --muted:#56627a; --line:#dde3ee; --mist:#f4f6fb; --white:#fff;
+  --navy:#1a24c9; --navy-d:#10179a; --coral:#d9261c; --coral-d:#b31c14; --cyan:#19b7d4;
+  --ink:#0f1840; --muted:#56627a; --line:#dde3ee; --mist:#f4f6fb; --white:#fff;
   --r:16px; --shadow:0 12px 34px rgba(22,34,74,.14);
 }
 *{box-sizing:border-box}
@@ -23,7 +23,7 @@ section{padding:76px 0}
 header.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:70px}
 .logo{display:flex;align-items:center;text-decoration:none}
-.logo svg{height:44px;width:auto}
+.logo svg,.logo img{height:50px;width:auto}
 nav.links{display:flex;gap:6px;font-size:15.5px;align-items:center}
 nav.links a{text-decoration:none;color:var(--muted);padding:8px 12px;border-radius:999px;font-weight:600}
 nav.links a:hover,nav.links a[aria-current]{color:var(--navy);background:var(--mist)}
