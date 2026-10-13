@@ -50,7 +50,7 @@ nav.links a:hover,nav.links a[aria-current]{color:var(--navy);background:var(--m
 }
 
 /* hero: the photo is left clean; a slim panel sits under it with only a small overlap */
-.hero{position:relative;background:#fff}
+.hero{position:relative;background:var(--navy-d)}
 .slides{position:relative;height:min(66vh,600px);min-height:360px;overflow:hidden}
 .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease}
 .slide.on{opacity:1}
