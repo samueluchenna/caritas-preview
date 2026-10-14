@@ -81,7 +81,7 @@ nav.links a:hover,nav.links a[aria-current]{color:var(--navy);background:var(--m
 .halls.two{grid-template-columns:1fr 1fr}
 @media(max-width:900px){.halls.two{grid-template-columns:1fr}}
 .hall{border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;background:#fff;display:flex;flex-direction:column;gap:8px;box-shadow:0 6px 18px rgba(22,34,74,.08)}
-.hall.compact{flex-direction:row;align-items:center;gap:18px;flex-wrap:wrap}
+.hall.compact{flex-direction:row;align-items:flex-start;gap:18px;flex-wrap:wrap}
 .hall.compact .cap{font-size:46px}
 .hall.compact .info{flex:1 1 220px}
 .hall.compact h3{font-size:19px}
@@ -147,7 +147,18 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 @media(max-width:900px){.rv-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.rv-grid{grid-template-columns:1fr}}
 .rv-grid .rv{flex:none}
 .rv .who{display:flex;gap:12px;align-items:center}
-.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;flex:none}
+.av{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;flex:none;position:relative;overflow:hidden}
+.av i{font-style:normal}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.rv-ph{display:flex;gap:8px;flex-wrap:wrap}
+.rv-ph button{border:0;padding:0;width:84px;height:84px;border-radius:10px;overflow:hidden;cursor:zoom-in;background:var(--mist)}
+.rv-ph img{width:100%;height:100%;object-fit:cover}
+.faces{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:22px}
+@media(max-width:900px){.faces{grid-template-columns:repeat(3,1fr)}}
+.faces button{position:relative;border:0;padding:0;border-radius:12px;overflow:hidden;aspect-ratio:3/4;cursor:zoom-in;background:var(--mist)}
+.faces img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.faces button:hover img{transform:scale(1.05)}
+.faces span{position:absolute;left:0;right:0;bottom:0;padding:22px 8px 7px;background:linear-gradient(transparent,rgba(10,16,36,.8));color:#fff;font-size:12.5px;font-weight:600;text-align:left;line-height:1.25}
 .rv .nm{font-weight:700;line-height:1.2}
 .rv .mt{font-size:13px;color:var(--muted)}
 .rv q{quotes:none;color:var(--ink);font-size:16.5px;line-height:1.55}

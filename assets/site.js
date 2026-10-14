@@ -116,7 +116,9 @@
   $$("[data-zoom]").forEach(function (b) {
     b.addEventListener("click", function () {
       if (!lb) lbBuild();
-      var group = $$("[data-zoom]", b.closest(".tabpane") || b.closest(".gal") || document).filter(function (x) { return x.offsetParent !== null; });
+      var gname = b.getAttribute("data-group");
+      var pool = gname ? $$("[data-zoom]").filter(function (x) { return x.getAttribute("data-group") === gname; }) : $$("[data-zoom]", b.closest(".tabpane") || b.closest(".gal") || document);
+      var group = pool.filter(function (x) { return x.offsetParent !== null; });
       lbItems = group.map(function (x) { var im = $("img", x); return { src: x.getAttribute("data-full") || im.currentSrc || im.src, alt: im.alt }; });
       lastFocus = b; lb.classList.add("on"); document.body.style.overflow = "hidden";
       lbShow(Math.max(0, group.indexOf(b)));
