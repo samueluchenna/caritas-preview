@@ -175,12 +175,22 @@
       c.addEventListener("click", function () {
         $$("button", f).forEach(function (x) { x.classList.toggle("on", x === c); x.setAttribute("aria-pressed", x === c ? "true" : "false"); });
         var k = c.getAttribute("data-f"), shown = 0;
+        scope.classList.remove("collapsed"); $$(".rv-more").forEach(function (m) { if (m.getAttribute("data-for") === scope.id && m.parentNode) m.parentNode.remove(); });
         $$(".rv", scope).forEach(function (r) {
           var t = (r.getAttribute("data-tags") || "").split(" ");
           var ok = k === "all" || t.indexOf(k) > -1; r.style.display = ok ? "" : "none"; if (ok) shown++;
         });
         var s = $(".rv-count", f.parentNode); if (s) s.textContent = shown + " shown";
       });
+    });
+  });
+
+  // "Show all reviews"
+  $$(".rv-more").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var g = document.getElementById(b.getAttribute("data-for"));
+      if (g) g.classList.remove("collapsed");
+      if (b.parentNode) b.parentNode.remove();
     });
   });
 
