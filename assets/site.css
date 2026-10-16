@@ -284,3 +284,64 @@ footer.dark a{color:#fff;text-decoration-color:rgba(255,255,255,.4);text-underli
 .dots button{position:relative}
 .dots button::after{content:"";position:absolute;inset:-12px}
 footer.dark a,.card a:not(.btn){display:inline-block;padding:7px 0}
+
+/* ===== premium theme (v7, 16 Oct 2026): midnight base, one red action, hairlines, Schibsted Grotesk headings =====
+   To go back: copy _theme-backups/site.css.v6-before-premium-theme over this file. */
+@font-face{font-family:"Schibsted Grotesk";font-style:normal;font-weight:400 900;font-display:swap;src:url(fonts/schibsted-grotesk.woff2) format("woff2")}
+:root{
+  --navy:#111a55; --navy-d:#0a1040; --ink:#0a1030; --royal:#2437c8;
+  --coral:#c4241b; --coral-d:#a21a12; --cyan:#19b7d4;
+  --muted:#4f5a73; --line:#e1e6ef; --mist:#f5f7fb;
+  --r:10px; --shadow:0 8px 24px rgba(10,16,48,.08);
+  --display:"Schibsted Grotesk","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+}
+h1,h2,h3,.cap,.stats b,.sum-row .big{font-family:var(--display)}
+h1,h2{font-weight:750;letter-spacing:-.028em}
+h3{font-weight:700;letter-spacing:-.015em}
+.stats b{font-weight:750;letter-spacing:-.03em}
+
+/* hero: the photo stays clean; the text sits on a midnight strip under it, with a hairline above */
+.hero{background:var(--navy-d)}
+.panel{margin:0 auto;background:transparent;box-shadow:none;border:0;border-radius:0;border-top:1px solid rgba(255,255,255,.16);padding:34px 0 44px;color:#fff}
+.panel h1{color:#fff;font-size:clamp(28px,3.4vw,46px);letter-spacing:-.03em}
+.panel p{color:#c3cce6}
+.panel .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.42)}
+.panel .btn-line:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.panel .btn-text{color:#fff}
+.panel .btn-text:hover{color:#cfe1ff}
+.dots{bottom:16px}
+@media(max-width:900px){.panel{margin-top:0;padding:26px 0 34px}.dots{bottom:14px}}
+
+/* one red action per screen: the header button goes midnight, red stays on the main action in the page */
+.top .btn-coral{background:var(--navy)}
+.top .btn-coral:hover{background:var(--navy-d)}
+.btn,.btn-sm{border-radius:8px}
+
+/* small labels: ink text and a cyan line instead of red */
+.eyebrow{color:var(--navy);font-size:12.5px;letter-spacing:.22em}
+.eyebrow::before{background:var(--cyan);width:32px}
+.band .eyebrow{color:#8fdcec}
+.band .eyebrow::before{background:#8fdcec}
+
+/* hairlines, smaller radius, quiet shadows */
+.card,.hall,.step,.rv,.sum-row,.wbox,.stats{border-radius:10px;border-color:var(--line)}
+.hall{box-shadow:none}
+.photo,.feature{border-radius:10px}
+.feature{border-radius:12px}
+.gal button,.faces button,.rv-ph button{border-radius:8px}
+.card .fi{border-radius:10px;background:#eef1fa}
+.card:hover,.hall:hover,.rv:hover{box-shadow:0 10px 22px rgba(10,16,48,.07)}
+
+/* selected and active states use midnight, not red */
+.step::before{background:var(--navy)}
+.prog i.on{background:var(--navy)}
+.opt.sel{border-color:var(--navy);background:#f0f3fb}
+.cal .sel{background:var(--navy)}
+.preview{border-left-color:var(--navy)}
+summary::after{color:var(--navy)}
+.quote-hero{border-left-color:var(--cyan)}
+
+/* slower, quieter motion (no counters) */
+.slide{transition:opacity 1.6s ease}
+.js .reveal{transform:translateY(10px);transition:opacity .8s ease,transform .8s ease}
+@media (prefers-reduced-motion:reduce){.slide{transition:none}.js .reveal{opacity:1;transform:none;transition:none}}
