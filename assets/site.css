@@ -345,3 +345,62 @@ summary::after{color:var(--navy)}
 .slide{transition:opacity 1.6s ease}
 .js .reveal{transform:translateY(10px);transition:opacity .8s ease,transform .8s ease}
 @media (prefers-reduced-motion:reduce){.slide{transition:none}.js .reveal{opacity:1;transform:none;transition:none}}
+
+/* ===== premium pass (v8, 16 Oct 2026, evening): PREMIUM PAGES ONLY (body.pro). Essential is untouched.
+   Photo page heads with the words on a midnight strip, the facts row on the hero strip, the halls as a ledger,
+   a closing "come and see it" band and a fuller footer. To go back: _theme-backups/v7-before-premium-pass-16oct-evening/ */
+.pro .hero .panel{padding-bottom:30px}
+.pro .hero .stats{margin:0 0 44px;background:transparent;border-color:rgba(255,255,255,.16)}
+.pro .hero .stats>div{border-color:rgba(255,255,255,.16);text-align:left;padding:18px 22px}
+.pro .hero .stats b{color:#fff}
+.pro .hero .stats span{color:#aeb9d8}
+@media(max-width:900px){.pro .hero .stats{margin-bottom:34px}}
+
+/* inner page heads: a clean photo band, then eyebrow, title and lead on midnight (same as the home hero) */
+.pro .phead{background:var(--navy-d);color:#fff}
+.pro .ph-photo{height:clamp(220px,40vh,420px);overflow:hidden;background:var(--navy-d)}
+.pro .ph-photo img{width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.pro .phead-in{border-top:1px solid rgba(255,255,255,.16);padding:32px 0 42px}
+.pro .phead-plain .phead-in{border-top:0;padding:46px 0}
+.pro .phead h1{color:#fff;font-size:clamp(30px,4.2vw,54px);margin-top:2px}
+.pro .phead .lead{color:#c3cce6;margin:12px 0 0}
+.pro .phead .eyebrow{color:#8fdcec}
+.pro .phead .eyebrow::before{background:#8fdcec}
+.pro .phead+section{padding-top:64px!important}
+@media(max-width:700px){.pro .phead+section{padding-top:44px!important}.pro .phead-in{padding:26px 0 32px}}
+
+/* the halls on the home page: a ledger of three rows with hairlines, not three boxes */
+.pro .ledger{grid-template-columns:1fr;gap:0;margin-top:30px;border-top:1px solid var(--line)}
+.pro .ledger .hall{display:grid;grid-template-columns:minmax(170px,220px) minmax(0,1fr) auto;align-items:center;gap:8px 28px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;padding:26px 6px;box-shadow:none}
+.pro .ledger .hall:hover{transform:none;box-shadow:none;background:rgba(255,255,255,.75)}
+.pro .ledger .cap{font-size:60px}
+.pro .ledger h3{font-size:22px}
+.pro .ledger .info p{font-size:16.5px;margin-top:4px}
+.pro .ledger .btn{margin:0;align-self:center}
+@media(max-width:700px){.pro .ledger .hall{grid-template-columns:1fr;gap:6px;padding:22px 2px}.pro .ledger .cap{font-size:48px}.pro .ledger .btn{justify-self:start;margin-top:8px}}
+
+/* closing band on every page except Plan and Visit */
+.pro .closing{border-top:1px solid var(--line);padding:76px 0;background:#fff}
+.pro .closing-in{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px 48px;align-items:end}
+.pro .closing h2{font-size:clamp(28px,3.4vw,44px)}
+.pro .closing .lead{margin:12px 0 0}
+.pro .closing-acts{display:flex;flex-wrap:wrap;gap:10px}
+.pro .closing-acts .ico{width:18px;height:18px}
+@media(max-width:800px){.pro .closing-in{grid-template-columns:1fr;align-items:start}.pro .closing{padding:60px 0}}
+
+/* fuller footer: logo, short description, explore links, visit, numbers, and a legal line */
+.pro .pfoot{padding:64px 0 0}
+.pro .pfoot .wrap{display:block}
+.pro .pf-cols{display:grid;grid-template-columns:1.5fr 1fr 1.1fr 1.2fr;gap:34px}
+.pro .pfoot b{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:#8fdcec;margin-bottom:14px}
+.pro .pfoot p{margin:0 0 10px}
+.pro .pf-logo{display:inline-flex;background:#fff;border-radius:10px;padding:8px 12px;margin-bottom:16px}
+.pro .pf-logo img{height:40px;width:auto}
+.pro .pf-links a{display:block;padding:6px 0;text-decoration:none;color:#e3e8f6}
+.pro .pf-links a:hover{color:#fff;text-decoration:underline}
+.pro .pf-legal{margin-top:46px;border-top:1px solid rgba(255,255,255,.12);padding:22px 0 28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 30px;font-size:13.5px;color:#9aa6c6}
+@media(max-width:900px){.pro .pf-cols{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pro .pf-cols{grid-template-columns:1fr}}
+
+/* review bars in midnight; the stars stay gold */
+.pro .bar-r i b{background:var(--navy)}
