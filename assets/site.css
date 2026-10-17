@@ -404,3 +404,35 @@ summary::after{color:var(--navy)}
 
 /* review bars in midnight; the stars stay gold */
 .pro .bar-r i b{background:var(--navy)}
+
+/* ===== size pass (17 Oct 2026): nothing too big on the screen (Essential and Premium).
+   Samuel: "big big cards, big big numbers, big big texts... the menu button is too big on mobile".
+   Phone limits: header 60px, logo 38px tall, Menu button 40px tall, hero photo about half the screen so the headline
+   and buttons show on the first screen, numbers 44px, no card taller than 60% of the screen.
+   Desktop: numbers 52px, boxes under 75% of the screen. Checked by size_check.js. Backup: _theme-backups/v8-before-size-pass-17oct/ */
+.menu-btn{min-height:40px;height:40px;padding:0 14px;font-size:15px;border-radius:8px;border-width:1px}
+.sum-row .big{font-size:52px}
+.cap{font-size:46px}
+.pro .ledger .cap{font-size:52px}
+.card .photo img{max-height:340px}
+@media(max-width:1020px){nav.links{top:60px}}
+@media(max-width:700px){
+  .top .wrap{min-height:60px}
+  .logo img{height:38px}
+  .slides{height:min(46vh,380px);min-height:0}
+  .panel h1{font-size:25px}
+  .panel p{font-size:16px}
+  .sum-row .big,.cap,.pro .ledger .cap{font-size:42px}
+  .pro .ph-photo{height:clamp(170px,28vh,240px)}
+  .pro .phead h1{font-size:29px}
+  .rv{padding:16px}
+  .rv q{font-size:15.5px;line-height:1.5}
+  .rv-ph button{width:64px;height:64px}
+  .card .photo img{max-height:260px}
+  .opt{padding:10px 14px}
+  .opt span{font-size:14px}
+  .btn{padding-left:18px;padding-right:18px}
+}
+/* chooser page on phones: the page had 46px of side margin, so its buttons broke onto two or three lines */
+@media(max-width:700px){body.chooser main{padding:24px 0!important}}
+@media(max-width:700px){body.chooser .btn-line{font-size:15px}.opt b,.opt span{line-height:1.35}.opt span{display:block}}
